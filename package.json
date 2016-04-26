@@ -10,7 +10,7 @@
     "prod": "export NODE_ENV=production; pm2 start lysa.js -i 0",
     "dev": "export NODE_ENV=development; pm2 start lysa.js --watch && pm2 logs all",
     "stop": "pm2 delete all",
-    "test": "node_modules/eslint/bin/eslint.js --env browser ./public/**/*.js && node_modules/eslint/bin/eslint.js --env node ./server/**/*.js; exit 0;"
+    "test": "node_modules/eslint/bin/eslint.js --env browser ./public/**/*.js && node_modules/eslint/bin/eslint.js --env node ./server/**/*.js;"
   },
   "pre-commit": [
     "test"
