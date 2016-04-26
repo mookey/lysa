@@ -1,0 +1,19 @@
+{
+  "name": "lysa",
+  "version": "1.0.0",
+  "description": "Mo money",
+  "main": "lysa.js",
+  "author": "Staffan Garhammar",
+  "license": "ISC",
+  "scripts": {
+    "preinstall": "npm install -g pm2 && pm2 install pm2-logrotate && pm2 set pm2-logrotate:retain 7",
+    "prod": "export NODE_ENV=production; pm2 start lysa.js -i 0",
+    "dev": "export NODE_ENV=development; pm2 start lysa.js --watch && pm2 logs all",
+    "stop": "pm2 delete all"
+  },
+  "dependencies": {
+    "compression": "^1.6.1",
+    "express": "^4.13.4",
+    "winston": "^2.2.0"
+  }
+}

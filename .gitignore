@@ -1,0 +1,5 @@
+node_modules
+server/config/production.json
+server/config/development.json
+public/dist
+npm-debug.log
