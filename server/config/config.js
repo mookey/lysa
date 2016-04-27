@@ -7,34 +7,28 @@ var PROD = 'production';
 var isProduction = process.env.NODE_ENV === PROD;
 
 module.exports = function(app) {
+  const logLevel = isProduction ? 'warn' : 'silly';
+  global.log = new (winston.Logger)({
+    transports: [
+      new (winston.transports.Console)({ level: logLevel, colorize: true, timestamp: true })
+    ]
+  });
 
-  function setDefaults(app) {
-    var maxAge = 1000 * 60 * 60 * 24 * 365;
-    app.use(compression());
-    app.use(express.static(global.paths.public, { maxAge: maxAge }));
-    app.enable('strict routing');
-    app.enable('case sensitive routing');
-  }
-
-  if (isProduction) {
-    global.log = new (winston.Logger)({
-      transports: [
-        new (winston.transports.Console)({ level: 'warn', colorize: true, timestamp: true })
-      ]
-    });
-  } else {
-    global.log = new (winston.Logger)({
-      transports: [
-        new (winston.transports.Console)({ level: 'silly', colorize: true, timestamp: true })
-      ]
-    });
-  }
   global.log.exitOnError = false;
+
   app.use(function(req, res, next) {
     global.log.silly(req.path);
+    req.lysa = {};
     return next();
   });
 
   setDefaults(app);
-
 };
+
+function setDefaults(app) {
+  var maxAge = 1000 * 60 * 60 * 24 * 365;
+  app.use(compression());
+  app.use(express.static(global.paths.public, { maxAge: maxAge }));
+  app.enable('strict routing');
+  app.enable('case sensitive routing');
+}
