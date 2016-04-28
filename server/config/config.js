@@ -13,7 +13,6 @@ module.exports = function(app) {
       new (winston.transports.Console)({ level: logLevel, colorize: true, timestamp: true })
     ]
   });
-
   global.log.exitOnError = false;
 
   app.use(function(req, res, next) {

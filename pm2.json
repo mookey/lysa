@@ -1,0 +1,10 @@
+{
+  "apps" : [{
+    "script": "lysa.js",
+    "watch": ["server"],
+    "ignore_watch" : ["public"],
+    "env": {
+      "NODE_ENV": "development",
+    }
+  }]
+}

@@ -8,7 +8,7 @@
   "scripts": {
     "preinstall": "npm install -g pm2 && pm2 install pm2-logrotate && pm2 set pm2-logrotate:retain 7",
     "prod": "export NODE_ENV=production; pm2 start lysa.js -i 0",
-    "dev": "export NODE_ENV=development; pm2 start lysa.js --watch && pm2 logs all --lines 40",
+    "dev": "export NODE_ENV=development; pm2 start pm2.json && pm2 logs all --lines 40",
     "stop": "pm2 delete all",
     "test": "node_modules/eslint/bin/eslint.js --env browser ./public/ && node_modules/eslint/bin/eslint.js --env node ./server/",
     "build:prod": "export NODE_ENV=production; ./node_modules/.bin/webpack --config webpack.config.production.js",
