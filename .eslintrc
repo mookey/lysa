@@ -3,6 +3,9 @@
   "parserOptions": {
     "ecmaVersion": 6
   },
+  "globals": {
+    "require": false
+  },
   "rules": {
     "indent": [
       2,
