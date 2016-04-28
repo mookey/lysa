@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = [
   {
@@ -14,11 +15,15 @@ module.exports = [
     module: {
       loaders: [
         {
-          test: /\.js$|\.jsx$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules|public\/dist)/
-        }
+          test: /\.scss$/,
+          loader: ExtractTextPlugin.extract(
+            "style",
+            "css?sourceMap!sass?sourceMap")
+         }
       ]
-    }
+    },
+    plugins: [
+      new ExtractTextPlugin('[name].css'),
+    ]
   }
 ];
