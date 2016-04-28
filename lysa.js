@@ -8,7 +8,7 @@ global.conf = require(global.paths.config + env.toLowerCase() + '.json', 'utf8')
 
 require(global.paths.config + 'config.js')(app);
 require(global.paths.routes + 'routes.js')(app);
-// require(global.env.routes + 'errors.js')(app);
+require(global.paths.routes + 'errors.js')(app);
 
 app.listen(global.conf.PORT);
 global.log.info('== Service started in "' + process.env.NODE_ENV + '" mode ==');
