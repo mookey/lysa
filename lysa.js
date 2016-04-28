@@ -15,4 +15,4 @@ app.get('*', function (req, res) {
 });
 
 app.listen(global.conf.PORT);
-global.log.warn('== Service started in "' + process.env.NODE_ENV + '" mode ==');
+global.log.info('== Service started in "' + process.env.NODE_ENV + '" mode ==');

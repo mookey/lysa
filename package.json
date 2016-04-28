@@ -20,6 +20,7 @@
   "dependencies": {
     "compression": "^1.6.1",
     "express": "^4.13.4",
+    "useragent": "^2.1.9",
     "winston": "^2.2.0"
   },
   "devDependencies": {
