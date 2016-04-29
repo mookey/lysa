@@ -12,7 +12,7 @@
     "stop": "pm2 delete all",
     "test": "node_modules/eslint/bin/eslint.js --env browser ./public/ && node_modules/eslint/bin/eslint.js --env node ./server/",
     "build:prod": "export NODE_ENV=production; ./node_modules/.bin/webpack --config webpack.config.production.js",
-    "build:dev": "./node_modules/.bin/webpack --progress --colors --watch --config webpack.config.js"
+    "build:dev": "export NODE_ENV=development; ./node_modules/.bin/webpack --progress --colors --watch --config webpack.config.js"
   },
   "pre-commit": [
     "test"
