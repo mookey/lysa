@@ -1,11 +1,17 @@
 {
   "extends": "eslint:recommended",
   "parserOptions": {
-    "ecmaVersion": 6
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "globals": {
     "require": false
   },
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "indent": [
       2,
@@ -22,6 +28,7 @@
     "semi": [
       2,
       "always"
-    ]
+    ],
+    "react/jsx-uses-vars": 1
   }
 }

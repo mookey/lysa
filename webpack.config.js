@@ -19,11 +19,15 @@ module.exports = [
           loader: ExtractTextPlugin.extract(
             "style",
             "css?sourceMap!sass?sourceMap")
+         },
+         {
+           test: /.js$/,
+           loaders: ['babel']
          }
       ]
     },
     plugins: [
-      new ExtractTextPlugin('[name].css'),
+      new ExtractTextPlugin('[name].css')
     ]
   }
 ];
