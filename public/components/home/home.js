@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class Home extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -8,8 +8,13 @@ export class Home extends React.Component {
     // console.log('home sweet home');
   }
   render() {
-    return <div className="home">
+    var classes = 'home' + (this.props.active ? ' active' : '');
+    return <div className={classes}>
         Home sweet home
       </div>;
   }
 }
+Home.propTypes = {
+  active: React.PropTypes.bool.isRequired
+};
+export {Home};
