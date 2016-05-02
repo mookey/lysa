@@ -5,16 +5,12 @@ class Blog extends React.Component {
     super(props);
   }
   componentDidMount() {
-    // console.log('fucker did mount');
   }
   render() {
-    var classes = 'blog' + (!this.props.active ? ' inactive' : '');
+    var classes = 'blog';
     return <div className={classes}>
         Blog
       </div>;
   }
 }
-// Blog.propTypes = {
-//   active: React.PropTypes.bool.isRequired
-// };
 export {Blog};

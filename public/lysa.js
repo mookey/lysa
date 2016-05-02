@@ -12,7 +12,5 @@ import { Routes } from './components/routes';
     ), document.getElementById('content'));
   }
   load();
-
-  // document.addEventListener('DOMContentLoaded', load, false);
-
+  
 })();
