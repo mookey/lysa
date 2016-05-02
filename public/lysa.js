@@ -1,6 +1,6 @@
 import React from 'react';  // eslint-disable-line
 import { render } from 'react-dom';
-import { App } from './components/app';
+import { Routes } from './components/routes';
 
 (function() {
 
@@ -8,11 +8,11 @@ import { App } from './components/app';
 
   function load() {
     render((
-      <App />
+      <Routes />
     ), document.getElementById('content'));
   }
   load();
 
-  document.addEventListener('DOMContentLoaded', load, false);
+  // document.addEventListener('DOMContentLoaded', load, false);
 
 })();

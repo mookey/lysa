@@ -8,13 +8,13 @@ class Blog extends React.Component {
     // console.log('fucker did mount');
   }
   render() {
-    var classes = 'blog' + (this.props.active ? ' active' : '');
+    var classes = 'blog' + (!this.props.active ? ' inactive' : '');
     return <div className={classes}>
         Blog
       </div>;
   }
 }
-Blog.propTypes = {
-  active: React.PropTypes.bool.isRequired
-};
+// Blog.propTypes = {
+//   active: React.PropTypes.bool.isRequired
+// };
 export {Blog};

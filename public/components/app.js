@@ -1,21 +1,16 @@
 import React from 'react';
-import { Link } from './ui/link/link';
-import { Home } from './home/home';
-import { About } from './about/about';
-import { Blog } from './blog/blog';
+import { Link } from 'react-router';
 
 export class App extends React.Component {
   render() {
     return <div>
       <ul role="nav">
-        <li><Link link="/" name="Home" /></li>
-        <li><Link link="/about" name="About" /></li>
-        <li><Link link="/blog" name="Blog" /></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/blog">Blog</Link></li>
       </ul>
       <div class="main-container">
-        <Home active={true} />
-        <Blog active={false} />
-        <About active={false} />
+        {this.props.children}
       </div>
     </div>;
   }
