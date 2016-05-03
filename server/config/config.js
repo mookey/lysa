@@ -70,7 +70,7 @@ function addLysaObject(app) {
 function setDefaults(app) {
   let maxAge = 1000 * 60 * 60 * 24 * 365;
   app.use(compression());
-  app.use(express.static(global.paths.public + 'dist', { maxAge: maxAge }));
+  app.use('/dist', express.static(global.paths.public + 'dist', { maxAge: maxAge }));
   app.use('/images', express.static(global.paths.public + 'images', { maxAge: maxAge }));
   app.enable('strict routing');
   app.enable('case sensitive routing');
